@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login &mdash; Siya Clothing</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .auth-container {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      background: var(--clr-surface);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader"><div class="loader-brand">Siya Clothing</div><div class="loader-bar"></div></div>
+  <!-- Header -->
+  <header class="header" id="header" role="banner">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Siya Clothing Home">Siya Clothing</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" id="authLinkDesktop" style="margin-right:1rem;font-weight:bold;color:var(--clr-text)">Login</a>
+        <button aria-label="Wishlist" id="wishlistNavBtn">♡ <span class="wishlist-count">0</span></button>
+        <button aria-label="Shopping cart" id="cartBtn">🛒 <span class="cart-count" id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div style="display:flex;justify-content:center;margin-top:2rem;">
+      <div class="reveal auth-container">
+        <h2 style="font-family:var(--ff-heading);font-size:var(--fs-lg);margin-bottom:0.5rem;text-align:center" id="authTitle">Welcome Back</h2>
+        <p style="color:var(--clr-text-muted);margin-bottom:2rem;text-align:center" id="authDesc">Sign in to access your orders and wishlist.</p>
+        
+        <form class="contact-form" id="authForm" novalidate>
+          <div class="form-group" id="nameGroupWrapper" style="display:none">
+            <label for="authName">Full Name</label>
+            <input type="text" id="authName" placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="authEmail">Email Address</label>
+            <input type="email" id="authEmail" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="authPassword">Password</label>
+            <input type="password" id="authPassword" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary" id="authSubmit" style="width:100%">Sign In</button>
+        </form>
+
+        <div style="margin-top:1.5rem;text-align:center">
+          <p style="color:var(--clr-text-muted);font-size:0.9rem">
+            <span id="authToggleText">Don't have an account?</span> 
+            <a href="#" id="authToggleBtn" style="color:var(--clr-text);text-decoration:underline;cursor:pointer">Sign up here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="alert" aria-live="assertive"><span class="toast-icon">&check;</span><span class="toast-message" id="toastMessage">Success!</span></div>
+
+  <script src="product-data.js"></script>
+  <script src="app.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let isLogin = true;
+      const form = document.querySelector('#authForm');
+      const toggleBtn = document.querySelector('#authToggleBtn');
+      
+      toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        isLogin = !isLogin;
+        document.querySelector('#authTitle').textContent = isLogin ? 'Welcome Back' : 'Create Account';
+        document.querySelector('#authDesc').textContent = isLogin ? 'Sign in to access your orders and wishlist.' : 'Join Siya Clothing for exclusive access.';
+        document.querySelector('#authSubmit').textContent = isLogin ? 'Sign In' : 'Sign Up';
+        document.querySelector('#authToggleText').textContent = isLogin ? "Don't have an account?" : "Already have an account?";
+        toggleBtn.textContent = isLogin ? "Sign up here" : "Sign in here";
+        document.querySelector('#nameGroupWrapper').style.display = isLogin ? 'none' : 'block';
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.querySelector('#authEmail').value;
+        const password = document.querySelector('#authPassword').value;
+        const full_name = document.querySelector('#authName').value;
+        
+        const payload = isLogin ? { email, password } : { email, password, full_name };
+        const endpoint = isLogin ? '/auth/login' : '/auth/register';
+        
+        try {
+          // Disable button
+          const btn = document.querySelector('#authSubmit');
+          const originalText = btn.textContent;
+          btn.textContent = 'Please wait...';
+          btn.disabled = true;
+
+          const res = await fetch(`http://localhost:8000${endpoint}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          
+          btn.textContent = originalText;
+          btn.disabled = false;
+
+          let data;
+          try { data = await res.json(); } catch(e) { data = await res.text(); }
+          
+          if (!res.ok) {
+            let errorMsg = typeof data === 'object' && data.detail ? data.detail : data;
+            // API sometimes sends detail as an array of validation errors
+            if (Array.isArray(errorMsg)) errorMsg = errorMsg.map(e => e.msg).join(', ');
+            throw new Error(errorMsg || res.statusText);
+          }
+          
+          if (isLogin && data.access_token) {
+            localStorage.setItem('token', data.access_token);
+            window.location.href = 'index.html';
+          } else if (!isLogin) {
+            alert("Account created successfully! Please sign in.");
+            toggleBtn.click(); // switch back to login
+            document.querySelector('#authPassword').value = '';
+          }
+        } catch (err) {
+          alert('Authentication failed: ' + err.message);
+        }
+      });
+
+      // Show "Account Mode" if logged in
+      if (localStorage.getItem('token')) {
+        document.querySelector('#authTitle').textContent = 'My Account';
+        document.querySelector('#authDesc').textContent = 'You are currently logged in.';
+        document.querySelector('#authForm').innerHTML = '<button class="btn btn-outline" id="logoutBtn" style="width:100%">Log Out</button>';
+        document.querySelector('#authToggleText').parentElement.style.display = 'none';
+        
+        document.querySelector('#logoutBtn').addEventListener('click', () => {
+          localStorage.removeItem('token');
+          window.location.reload();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
