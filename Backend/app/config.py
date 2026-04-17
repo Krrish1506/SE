@@ -8,5 +8,6 @@ class Settings:
     SECRET_KEY: str = os.getenv("SECRET_KEY", "5d0254f31c923e14d56914bd09441ae31fad7892fbc562d53497773eb24b698f")
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    FRONTEND_URL: str = os.getenv("FRONTEND_URL", "http://localhost:5173,http://localhost:3000")
 
 settings = Settings() 
