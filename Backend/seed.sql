@@ -34,7 +34,7 @@ CREATE TABLE products (
         '[{"name": "Black", "hex": "#1a1a1a"}, {"name": "White", "hex": "#f5f5f5"}, {"name": "Charcoal", "hex": "#808080"}]',
         '["https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1542327897-d73f4005b533?w=800&q=80&fit=crop"]',
         'Elevate your everyday wardrobe with our signature Noir Oversized Hoodie. Crafted from premium 400GSM French terry cotton, this hoodie features a relaxed, oversized silhouette with dropped shoulders and a kangaroo pocket. The minimal design lets the quality speak for itself.',
-        '["100% organic cotton, 400GSM French terry", "Relaxed oversized fit with dropped shoulders", "Kangaroo pocket with hidden zip compartment", "Ribbed cuffs and hem for a clean finish", "Tonal embroidered Siya Clothing logo on chest"]',
+        '["100% organic cotton, 400GSM French terry", "Relaxed oversized fit with dropped shoulders", "Kangaroo pocket with hidden zip compartment", "Ribbed cuffs and hem for a clean finish", "Tonal embroidered Stark Avenue logo on chest"]',
         'Oversized fit — we recommend choosing your regular size for the intended relaxed look, or sizing down for a more standard fit. Model is 6''1" / 185cm wearing size L.',
         100
     );
@@ -52,7 +52,7 @@ CREATE TABLE products (
         '[{"name": "White", "hex": "#f5f5f5"}, {"name": "Black", "hex": "#1a1a1a"}, {"name": "Sand", "hex": "#c2b280"}]',
         '["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80&fit=crop"]',
         'The foundation of every great outfit. Our Essential White Tee is made from premium Supima cotton with a perfect weight that drapes beautifully. Pre-shrunk and garment-dyed for a lived-in softness from day one.',
-        '["100% Supima cotton, 180GSM", "Relaxed fit with slightly dropped shoulders", "Reinforced collar \u2014 no stretching or sagging", "Pre-shrunk and garment-dyed", "Subtle Siya Clothing woven label at hem"]',
+        '["100% Supima cotton, 180GSM", "Relaxed fit with slightly dropped shoulders", "Reinforced collar \u2014 no stretching or sagging", "Pre-shrunk and garment-dyed", "Subtle Stark Avenue woven label at hem"]',
         'Regular to relaxed fit. True to size. Model is 6''0" / 183cm wearing size M.',
         100
     );
@@ -160,7 +160,7 @@ CREATE TABLE products (
         '[{"name": "Black", "hex": "#1a1a1a"}, {"name": "Brown", "hex": "#8B6914"}]',
         '["https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1585856331426-d7b3f9fc5c16?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?w=800&q=80&fit=crop"]',
         'The finishing touch. Our Signature Leather Bag is hand-crafted from full-grain Italian leather with a brushed nickel buckle. Designed to develop character over years of wear.',
-        '["Full-grain Italian leather, 3.5cm width", "Brushed nickel buckle with Siya Clothing monogram", "Five-hole adjustment, fits waist 28-38\"", "Hand-painted and burnished edges", "Comes in Siya Clothing dust bag"]',
+        '["Full-grain Italian leather, 3.5cm width", "Brushed nickel buckle with Stark Avenue monogram", "Five-hole adjustment, fits waist 28-38\"", "Hand-painted and burnished edges", "Comes in Stark Avenue dust bag"]',
         'One size — adjustable from 28" to 38" waist. Measure your waist at the point where you normally wear your belt.',
         100
     );
@@ -178,7 +178,7 @@ CREATE TABLE products (
         '[{"name": "Gray", "hex": "#808080"}, {"name": "Washed Black", "hex": "#333"}, {"name": "Stone", "hex": "#b8a99a"}]',
         '["https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=800&q=80&fit=crop", "https://images.unsplash.com/photo-1618354691438-25bc04584c23?w=800&q=80&fit=crop"]',
         'Lived-in luxury from the first wear. The Washed Crew Neck is garment-dyed and enzyme-washed to achieve a perfectly broken-in feel. Heavyweight cotton ensures it holds its shape wash after wash.',
-        '["100% combed cotton, 240GSM heavyweight", "Garment-dyed and enzyme-washed", "Relaxed fit with set-in sleeves", "Double-needle stitching throughout", "Tonal Siya Clothing embroidery on back neck"]',
+        '["100% combed cotton, 240GSM heavyweight", "Garment-dyed and enzyme-washed", "Relaxed fit with set-in sleeves", "Double-needle stitching throughout", "Tonal Stark Avenue embroidery on back neck"]',
         'Relaxed fit — slightly wider and longer. True to size for a relaxed look. Model is 5''11" / 180cm wearing size M.',
         100
     );

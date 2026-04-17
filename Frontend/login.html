@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login &mdash; Siya Clothing</title>
+  <title>Login &mdash; Stark Avenue</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     .auth-container {
@@ -19,11 +19,11 @@
 </head>
 <body>
   <!-- Page Loader -->
-  <div class="page-loader" id="pageLoader"><div class="loader-brand">Siya Clothing</div><div class="loader-bar"></div></div>
+  <div class="page-loader" id="pageLoader"><div class="loader-brand">Stark Avenue</div><div class="loader-bar"></div></div>
   <!-- Header -->
   <header class="header" id="header" role="banner">
     <div class="container">
-      <a href="index.html" class="nav-logo" aria-label="Siya Clothing Home">Siya Clothing</a>
+      <a href="index.html" class="nav-logo" aria-label="Stark Avenue Home">Stark Avenue</a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="products.html">Shop</a>
@@ -84,7 +84,7 @@
         e.preventDefault();
         isLogin = !isLogin;
         document.querySelector('#authTitle').textContent = isLogin ? 'Welcome Back' : 'Create Account';
-        document.querySelector('#authDesc').textContent = isLogin ? 'Sign in to access your orders and wishlist.' : 'Join Siya Clothing for exclusive access.';
+        document.querySelector('#authDesc').textContent = isLogin ? 'Sign in to access your orders and wishlist.' : 'Join Stark Avenue for exclusive access.';
         document.querySelector('#authSubmit').textContent = isLogin ? 'Sign In' : 'Sign Up';
         document.querySelector('#authToggleText').textContent = isLogin ? "Don't have an account?" : "Already have an account?";
         toggleBtn.textContent = isLogin ? "Sign up here" : "Sign in here";
@@ -155,3 +155,4 @@
   </script>
 </body>
 </html>
+

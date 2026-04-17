@@ -1,5 +1,5 @@
 /* ============================================================
-   Siya Clothing — Core Application JavaScript
+   Stark Avenue — Core Application JavaScript
    ============================================================
    Features:
    - Page loader with timeout
@@ -954,14 +954,14 @@
           </p>
           <a href="products.html" class="btn btn-primary" style="margin-top:2rem;display:inline-block">Browse All Products</a>
         </div>`;
-      document.title = 'Product Not Found — Siya Clothing';
+      document.title = 'Product Not Found — Stark Avenue';
       const bcName = $('#breadcrumbName');
       if (bcName) bcName.textContent = 'Not Found';
       return;
     }
 
     // Update page title and breadcrumb
-    document.title = `${product.name} — Siya Clothing`;
+    document.title = `${product.name} — Stark Avenue`;
     const bcName = $('#breadcrumbName');
     if (bcName) bcName.textContent = product.name;
 
@@ -1265,3 +1265,4 @@
     boot();
   }
 })();
+

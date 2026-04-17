@@ -30,3 +30,4 @@ We need to replace the instant one-click order mechanism with a fully-fledged eC
 # Risks & Assumptions
 - *Assumption*: The `POST /orders/` endpoint already accepts our mock `shipping_address` payload format. We will dynamically populate it with real inputs from the form.
 - *Risk*: The cart flyout logic heavily relies on `Cart.getItems()`. We assume `Cart` can be properly read via the existing `product-data.js` and `app.js` logic on the new page.
+

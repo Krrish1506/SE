@@ -40,7 +40,7 @@ PRODUCTS = [
             'Relaxed oversized fit with dropped shoulders',
             'Kangaroo pocket with hidden zip compartment',
             'Ribbed cuffs and hem for a clean finish',
-            'Tonal embroidered Siya Clothing logo on chest'
+            'Tonal embroidered Stark Avenue logo on chest'
         ],
         "fit": 'Oversized fit — we recommend choosing your regular size for the intended relaxed look, or sizing down for a more standard fit. Model is 6\'1" / 185cm wearing size L.'
     },
@@ -70,7 +70,7 @@ PRODUCTS = [
             'Relaxed fit with slightly dropped shoulders',
             'Reinforced collar — no stretching or sagging',
             'Pre-shrunk and garment-dyed',
-            'Subtle Siya Clothing woven label at hem'
+            'Subtle Stark Avenue woven label at hem'
         ],
         "fit": 'Regular to relaxed fit. True to size. Model is 6\'0" / 183cm wearing size M.'
     },
@@ -244,10 +244,10 @@ PRODUCTS = [
         "description": 'The finishing touch. Our Signature Leather Bag is hand-crafted from full-grain Italian leather with a brushed nickel buckle. Designed to develop character over years of wear.',
         "details": [
             'Full-grain Italian leather, 3.5cm width',
-            'Brushed nickel buckle with Siya Clothing monogram',
+            'Brushed nickel buckle with Stark Avenue monogram',
             'Five-hole adjustment, fits waist 28-38"',
             'Hand-painted and burnished edges',
-            'Comes in Siya Clothing dust bag'
+            'Comes in Stark Avenue dust bag'
         ],
         "fit": 'One size — adjustable from 28" to 38" waist. Measure your waist at the point where you normally wear your belt.'
     },
@@ -277,7 +277,7 @@ PRODUCTS = [
             'Garment-dyed and enzyme-washed',
             'Relaxed fit with set-in sleeves',
             'Double-needle stitching throughout',
-            'Tonal Siya Clothing embroidery on back neck'
+            'Tonal Stark Avenue embroidery on back neck'
         ],
         "fit": 'Relaxed fit — slightly wider and longer. True to size for a relaxed look. Model is 5\'11" / 180cm wearing size M.'
     },
@@ -402,3 +402,4 @@ def seed_db():
 if __name__ == "__main__":
     reset_database()
     seed_db()
+

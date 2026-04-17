@@ -55,3 +55,4 @@ with open('seed.sql', 'w', encoding='utf-8') as f:
     f.write(ddl)
 
 print("seed.sql generated successfully")
+

@@ -1,6 +1,6 @@
-# Siya Clothing - Luxury Streetwear
+# Stark Avenue - Luxury Streetwear
 
-A modern, responsive, and premium e-commerce front-end for **Siya Clothing**, a luxury streetwear brand. This project features a clean and elegant user interface, smooth animations, and a seamless shopping experience using vanilla web technologies.
+A modern, responsive, and premium e-commerce front-end for **Stark Avenue**, a luxury streetwear brand. This project features a clean and elegant user interface, smooth animations, and a seamless shopping experience using vanilla web technologies.
 
 ## ✨ Features
 
@@ -43,4 +43,5 @@ Since this is a front-end project built with vanilla web technologies, no compil
 
 ## 📄 Footer Notes
 
-&copy; 2026 Siya Clothing. All rights reserved. Designed with ♥ for modern fashion.
+&copy; 2026 Stark Avenue. All rights reserved. Designed with ♥ for modern fashion.
+

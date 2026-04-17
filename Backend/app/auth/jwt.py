@@ -46,3 +46,4 @@ def verify_token(token: str):
             detail="Invalid or expired token",
             headers={"WWW-Authenticate": "Bearer"},
         )
+

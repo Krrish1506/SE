@@ -1,5 +1,5 @@
 /* ============================================================
-   Siya Clothing — Product Data Catalog (Dynamic)
+   Stark Avenue — Product Data Catalog (Dynamic)
    ============================================================ */
 
 let PRODUCTS = [];
@@ -27,3 +27,4 @@ function productImg(url, w = 800, q = 80) {
     if (url.includes('images.unsplash.com')) return url;
     return `${url}?w=${w}&q=${q}&fit=crop`;
 }
+
