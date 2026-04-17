@@ -1,8 +1,12 @@
 .env
+.env.local
+*.db
 __pycache__/
 *.pyc
 .DS_Store
 node_modules/
 .pytest_cache/
 .venv/
-venv311
+.venv311
+*.sqlite
+*.sqlite3
