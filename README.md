@@ -2,6 +2,10 @@
 
 > A premium luxury streetwear e-commerce platform built as a Software Engineering assignment. Features a pixel-perfect vanilla HTML/CSS/JS storefront connected to a production-grade FastAPI backend with JWT authentication and PostgreSQL persistence.
 
+### 🌐 Live Demo
+- **Frontend (Vercel):** [https://stark-avenue.vercel.app/](https://stark-avenue.vercel.app/)
+- **Backend API (Render):** [https://se-ecommerce-backend.onrender.com/docs](https://se-ecommerce-backend.onrender.com/docs)
+
 ---
 
 ## 📋 Table of Contents
@@ -263,7 +267,7 @@ Right-click Frontend/index.html → "Open with Live Server"
 # Access at: http://127.0.0.1:5500
 ```
 
-> **Important:** To connect the frontend to your local backend, ensure `app.js` has the API base URL pointed at `http://localhost:8000`.
+> **Important:** The frontend's API URL is centrally configured in `Frontend/product-data.js` via the `API_BASE` constant. Change it to `http://localhost:8000` for local development.
 
 ---
 
@@ -281,6 +285,22 @@ docker-compose up --build
 |---------|------|-------------|
 | `web` | `8000` | FastAPI application |
 | `db` | `5432` | PostgreSQL 13 database |
+
+---
+
+## ☁️ Production Deployment
+
+### Backend (Render)
+1. **Database:** Create a Free PostgreSQL database on Render.
+2. **Web Service:** Create a new Web Service using Python 3 tied to the `Backend` directory. Set build command to `pip install -r requirements.txt` and start command to `uvicorn app.main:app --host 0.0.0.0 --port 10000`.
+3. **Environment Variables:** Set `DATABASE_URL` (Internal DB URL), `SECRET_KEY`, and `FRONTEND_URL` (your deployed Vercel URL).
+
+*(Note: The `Backend/.python-version` file pins Python to 3.11.9 to ensure compatibility with `pydantic-core` pre-built wheels and avoids failing Cargo compilation).*
+
+### Frontend (Vercel)
+1. Import the project into Vercel.
+2. Set the Root Directory to `Frontend`. No build command or output directory configuration is needed.
+3. Update `API_BASE` in `product-data.js` to point to the live Render backend URL before deploying.
 
 ---
 
