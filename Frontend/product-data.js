@@ -2,12 +2,15 @@
    Stark Avenue — Product Data Catalog (Dynamic)
    ============================================================ */
 
+// ✅ PRODUCTION API BASE — update this after Render deployment
+const API_BASE = 'https://se-ecommerce-backend.onrender.com';
+
 let PRODUCTS = [];
 
 // Fetch products from backend securely
 async function fetchProducts() {
     try {
-        const response = await fetch('http://localhost:8000/products');
+        const response = await fetch(`${API_BASE}/products`);
         if (!response.ok) throw new Error('Failed to fetch from backend');
         PRODUCTS = await response.json();
         console.log("Products loaded from backend API:", PRODUCTS);
